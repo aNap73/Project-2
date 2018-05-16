@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 
+
 /* Setup express */
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -30,6 +31,7 @@ require("./routes/html-routes.js")(app);
 db.sequelize.sync({ force: true}).then(function(){
   app.listen(PORT , function(){
     console.log("App listening at http://localhost:" + PORT);
-  });
-});
+  })
+})
+
 
