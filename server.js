@@ -1,3 +1,6 @@
+//Please add a .env file with your DBPWD; thx ant
+
+
 /* Bring in dependencies */
 const express = require("express");
 const bodyParser = require("body-parser");
