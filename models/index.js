@@ -1,6 +1,8 @@
 'use strict';
 //AAN 2018.05.05 Added dotenv in for windows developers with passwords
+
 require('dotenv').config();
+//console.log(process.env);
 
 var fs        = require('fs');
 var path      = require('path');
@@ -13,10 +15,12 @@ var db        = {};
 //AAN 2018.05.05 Added dotenv in for windows developers with passwords
 //For apple development disable this line by setting process.env.APPLE=true in
 //your env file. If PC then add DBPWD to your .env file.
-if(!process.env.APPLE){
+if(process.env.NOTAPPLE){
+  console.log('PC');
   config.password=process.env.DBPWD;
 }
 
+console.log(config.password);
 
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
