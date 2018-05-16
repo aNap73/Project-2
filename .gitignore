@@ -1,7 +1,3 @@
 node_modules
 .DS_Store
-<<<<<<< HEAD
 .env
-=======
-.env
->>>>>>> master
