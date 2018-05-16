@@ -9,23 +9,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vjdestefano/Project-2.git"
+    "url": "git+https://github.com/aNap73/Project-2.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vjdestefano/Project-2/issues"
+    "url": "https://github.com/aNap73/Project-2/issues"
   },
-  "homepage": "https://github.com/vjdestefano/Project-2#readme",
+  "homepage": "https://github.com/aNap73/Project-2#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
+    "cloudinary": "^1.11.0",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "formidable": "^1.2.1",
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "sequelize": "^4.37.7"
   }
 }
