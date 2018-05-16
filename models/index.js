@@ -19,8 +19,6 @@ if(process.env.DBPWD){
   config.password=process.env.DBPWD;
 }
 
-console.log(config.password);
-
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
@@ -36,12 +34,20 @@ fs
     var model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
   });
-
+ 
+  //db['user'].belongsTo(db.user);
+  //db.contents.belongsTo(db.user, {foreignKey: 'fk_UsersContent', targetKey: 'userId'});  
+  
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
+//AAN 2018.05.05 ForeignKey creation here becaues db model is built.
+
+
+
+db.contents.belongsTo(db.users);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
