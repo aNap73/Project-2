@@ -13,9 +13,8 @@ var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
 //AAN 2018.05.05 Added dotenv in for windows developers with passwords
-//For apple development disable this line by setting process.env.APPLE=true in
-//your env file. If PC then add DBPWD to your .env file.
-if(process.env.NOTAPPLE){
+//For apple as long as you don't define DBPWD in your .env file. Should be fine
+if(process.env.DBPWD){
   console.log('PC');
   config.password=process.env.DBPWD;
 }
