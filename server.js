@@ -10,7 +10,7 @@ var session = require("express-session");
 var passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+//app.use(session({ secret: "baseball bat cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -52,7 +53,7 @@ db.sequelize.sync({ force: true}).then(function(){
       });
       //DB LIVE INSERT TEST DATA HERE
     console.log("App listening at http://localhost:" + PORT);
-  })
+  });
 })
 
 
