@@ -12,6 +12,6 @@ module.exports = function(app) {
 
   /* Homepage route */
   app.get("/" , function(req , res){
-    res.render("index" , ex);
+    res.render("index" , ex[0]);
   });
 }
