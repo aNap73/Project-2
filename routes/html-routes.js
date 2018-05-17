@@ -19,35 +19,6 @@ module.exports = function(app) {
   });
   app.get("/" ,function(req , res){  
     res.render("index" , ex);
-    // .then(function(outdata){
-    //     console.log('outdata',outdata.dataValues.password)
-    //    //VALIDPASSWORD EXAMPLE; IF TRUE THEN VALIDATE USER
-    //     console.log('password hash working:', outdata.validPassword('password123'));
-    //      req.login({email:'napolitano.anthony@yahoo.com', password:'password123'}, function (err) {
-    //     if (err) {      
-    //       console.log(err);      
-    //       return res.status(422).json(err);
-    //     }
-      
-    //     }); 
-    //   // //LOGIN EXAMPLE
-    //   // req.login({email:'napolitano.anthony@yahoo.com',password:'password123'}, function (err) {
-    //   //   if (err) {
-          
-    //   //     console.log(err)
-    //   //     //res.render("index" , ex);
-    //   //     return res.status(422).json(err);
-    //   //   }
-    //   //   console.log('user', req.user);
-    //   //   //res.render("index" , ex);
-    //   //   //res.json("/members");
-    //   // });
-  
-
-
-    //  //SEQUILIZE CHECK         
-    
-    // });
 });
 
   app.get("/showme" , function(req , res){
@@ -56,6 +27,5 @@ module.exports = function(app) {
   }); 
   
      
-    
   
 }
