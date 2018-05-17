@@ -1,21 +1,84 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
-  <body>
 
-      {{{body}}}
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+    <a class="navbar-brand" href="#!">KEWL LOGO</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#!">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-item">
+      <p>this is the user:</p>
+      {{!-- this has to be the name of the item within the object --}}
+      {{name}}
+    </div>
+    <div class="dropdown open">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="optionList" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Options
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#!">Separated link</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#!">Action</a>
+        <a class="dropdown-item" href="#!">Another action</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-7" id="mainContArea">
+        <p>this is the esection for the articles and our main content while we have nothing enjoy this breif pray of letters
+          : ewjweewhgd qeudqew uibewuhdbqwd qedqwbeu dhewbdewquhdb qwdbqwdhqwg don en fewneubeou ohebf ewbwekbw hwc ewbco
+          ew fjbewoegoeujcbweocbececoeycerh bceuhcbeohc beo bce beuhc be
+        </p>
+      </div>
+      <div class="col-4">
+        <form>
+          <div class="form-group">
+            <label for="exampleTextarea">Post A Comment</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+          </div>
+          <button type="submit" aria-label="this is a test button">Submit</button>
+        </form>
+        <p>comment section where all the aids lives and dies</p>
+        <div class="col-12" id="commentSection">
+          <p> this is somethign that would be an example comment!</p>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
 </html>
