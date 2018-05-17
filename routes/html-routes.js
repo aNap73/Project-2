@@ -14,6 +14,7 @@ module.exports = function(app) {
   }
 
   /* Homepage route */
+
   app.get("/" ,function(req , res){  
   
   db.users.create({
@@ -58,6 +59,5 @@ module.exports = function(app) {
   }); 
   
      
-    
   
 }
