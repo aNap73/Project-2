@@ -33,31 +33,8 @@ module.exports = function(app) {
       }
       res.json(req.user);
   }); 
-      // //LOGIN EXAMPLE
-      // req.login({email:'napolitano.anthony@yahoo.com',password:'password123'}, function (err) {
-      //   if (err) {
-          
-      //     console.log(err)
-      //     //res.render("index" , ex);
-      //     return res.status(422).json(err);
-      //   }
-      //   console.log('user', req.user);
-      //   //res.render("index" , ex);
-      //   //res.json("/members");
-      // });
-  
 
-
-     //SEQUILIZE CHECK         
+  });
     
-    });
-});
-
-  app.get("/showme" , function(req , res){
-    res.json(req.user);
-    //res.json(req.user);
-  }); 
-  
-     
   
 }
