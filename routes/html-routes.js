@@ -14,42 +14,40 @@ module.exports = function(app) {
   }
 
   /* Homepage route */
+  app.post("/",passport.authenticate("local"),function(req,res){
+
+  });
   app.get("/" ,function(req , res){  
-  
-  db.users.create({
-    email:'napolitano.anthony@yahoo.com',
-    password:'password123',
-    onBoardId:1,
-    userImage:'https://anap73.github.io/Bootstrap-Portfolio.github.io/assets/images/AntMeHead.png'
-    }).then(function(outdata){
-      console.log('outdata',outdata.dataValues.password)
-     //VALIDPASSWORD EXAMPLE; IF TRUE THEN VALIDATE USER
-      console.log('password hash working:', outdata.validPassword('password123'));
-       req.login({email:'napolitano.anthony@yahoo.com', password:'password123'}, function (err) {
-      if (err) {      
-        console.log(err);      
-        return res.status(422).json(err);
-      }
-      res.json(req.user);
-  }); 
-      // //LOGIN EXAMPLE
-      // req.login({email:'napolitano.anthony@yahoo.com',password:'password123'}, function (err) {
-      //   if (err) {
+    res.render("index" , ex);
+    // .then(function(outdata){
+    //     console.log('outdata',outdata.dataValues.password)
+    //    //VALIDPASSWORD EXAMPLE; IF TRUE THEN VALIDATE USER
+    //     console.log('password hash working:', outdata.validPassword('password123'));
+    //      req.login({email:'napolitano.anthony@yahoo.com', password:'password123'}, function (err) {
+    //     if (err) {      
+    //       console.log(err);      
+    //       return res.status(422).json(err);
+    //     }
+      
+    //     }); 
+    //   // //LOGIN EXAMPLE
+    //   // req.login({email:'napolitano.anthony@yahoo.com',password:'password123'}, function (err) {
+    //   //   if (err) {
           
-      //     console.log(err)
-      //     //res.render("index" , ex);
-      //     return res.status(422).json(err);
-      //   }
-      //   console.log('user', req.user);
-      //   //res.render("index" , ex);
-      //   //res.json("/members");
-      // });
+    //   //     console.log(err)
+    //   //     //res.render("index" , ex);
+    //   //     return res.status(422).json(err);
+    //   //   }
+    //   //   console.log('user', req.user);
+    //   //   //res.render("index" , ex);
+    //   //   //res.json("/members");
+    //   // });
   
 
 
-     //SEQUILIZE CHECK         
+    //  //SEQUILIZE CHECK         
     
-    });
+    // });
 });
 
   app.get("/showme" , function(req , res){
