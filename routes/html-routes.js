@@ -14,18 +14,27 @@ module.exports = function(app) {
   }
 
   /* Homepage route */
-  app.post("/",passport.authenticate("local"),function(req,res){
+
+  app.get("/" ,function(req , res){  
+  
+  db.users.create({
+    email:'napolitano.anthony@yahoo.com',
+    password:'password123',
+    onBoardId:1,
+    userImage:'https://anap73.github.io/Bootstrap-Portfolio.github.io/assets/images/AntMeHead.png'
+    }).then(function(outdata){
+      console.log('outdata',outdata.dataValues.password)
+     //VALIDPASSWORD EXAMPLE; IF TRUE THEN VALIDATE USER
+      console.log('password hash working:', outdata.validPassword('password123'));
+       req.login({email:'napolitano.anthony@yahoo.com', password:'password123'}, function (err) {
+      if (err) {      
+        console.log(err);      
+        return res.status(422).json(err);
+      }
+      res.json(req.user);
+  }); 
 
   });
-  app.get("/" ,function(req , res){  
-    res.render("index" , ex);
-});
-
-  app.get("/showme" , function(req , res){
-    res.json(req.user);
-    //res.json(req.user);
-  }); 
-  
-     
+    
   
 }
