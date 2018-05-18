@@ -15,7 +15,7 @@ var db        = {};
 //AAN 2018.05.05 Added dotenv in for windows developers with passwords
 //For apple as long as you don't define DBPWD in your .env file. Should be fine
 if(process.env.DBPWD){
-  console.log('PC');
+  
   config.password=process.env.DBPWD;
 }
 

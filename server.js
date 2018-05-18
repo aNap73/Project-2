@@ -51,8 +51,9 @@ db.sequelize.sync({ force: true}).then(function(){
         console.log('outdata',outdata.dataValues.password)
         console.log('password hash working:', outdata.validPassword('password123'));
         //VALIDPASSWORD EXAMPLE SEE ABOVE IF TRUE THEN VALIDATE USER
+        //###.then NEST### DB LIVE INSERT TEST DATA HERE
       });
-      //DB LIVE INSERT TEST DATA HERE
+      
     console.log("App listening at http://localhost:" + PORT);
   });
 })

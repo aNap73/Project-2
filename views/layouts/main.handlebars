@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,12 +31,13 @@
       </ul>
     </div>
     <div class="nav-item">
-      <p>this is the user:</p>{{name}}
+      
       {{!-- this has to be the name of the item within the object --}}
       {{#if userObj}}
-        <a href='/logout'>Log Out</a>
+        <p>Welcome! </p>{{name}}
+        <a href='/logout'>Log Out?</a>
       {{else}}  
-        <a href='/login'>Log In</a>
+        <a href='/login'>Log In!</a>
       {{/if}}
       
     </div>
