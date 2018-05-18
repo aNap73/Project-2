@@ -10,16 +10,27 @@ var db = require("../models");
 module.exports = function(app) {
 
   var ex = {
-    name: "test"
+    name: ""
   }
-
-  app.get("/logintest" ,function(req , res){  
-    res.render("logintest" , ex);
-  });
-    
-  /* Homepage route */
-app.get("*" ,function(req , res){  
+  app.get("/logout", function (req, res) {
+    req.logout();
     res.render("index" , ex);
+  });
+  app.get("/login" ,function(req , res){  
+    //console.log(req.user);
+    res.render("logintmp" , ex);
+  });    
+  /* Homepage route */
+app.get("*" ,function(req , res){
+  let objRender = {};  
+  if (req.user){
+      objRender = {name: req.user.email,
+                   userObj: req.user};
+    }else{
+      objRender = {name: ''};
+    }
+    
+    res.render("index" , objRender);
 });
 
 
