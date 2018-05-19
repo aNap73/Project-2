@@ -73,15 +73,24 @@ module.exports = function (app) {
 
   /* Admin Site route */
   app.get("/admin", function (req, res) {
-    let pageData = {
-      name: req.user.email,
-      userObj: req.user,
-    };
-    if(req.user.hasAdmin){
-      res.render("admin", pageData);
-    }else {
-      res.render("index" , pageData);
-    }
+    let pageData = {};
+    if (req.user) {
+      pageData = {
+        name: req.user.email,
+        userObj: req.user,
+        happyMonkeys:'Bill'
+      };
+      if(req.user.hasAdmin){
+        res.render("admin",pageData);
+      }else {
+        res.render("index", pageData);
+      };
+    }else{
+        res.render("index", pageData);
+      }
+
+        
+    
     
   });
 
@@ -91,10 +100,11 @@ module.exports = function (app) {
     if (req.user) {
       pageData = {
         name: req.user.email,
-        userObj: req.user
+        userObj: req.user,
+        happyMonkeys:'Bill'
       };
     }
-
+    
     res.render("index", pageData);
   });
 
