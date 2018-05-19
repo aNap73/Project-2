@@ -97,12 +97,14 @@ module.exports = function (app) {
   /* Homepage route */
   app.get("*", function (req, res) {
     let pageData = {};
+    pageData = {
+      
+      happyMonkeys:'Bill'
+    };
     if (req.user) {
-      pageData = {
-        name: req.user.email,
-        userObj: req.user,
-        happyMonkeys:'Bill'
-      };
+      pageData.happyMonkeys= 'Bill Logged in';
+      pageData.name = req.user.email;
+      pageData.userObj = req.user;
     }
     
     res.render("index", pageData);

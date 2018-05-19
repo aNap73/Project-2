@@ -9,8 +9,7 @@ module.exports = function (sequelize , DataTypes){
     contentType:{
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'COMMENT',
-      validate: {isin:[['COMMENT','ARTICLE']]}
+      defaultValue: 'COMMENT'
     },
     contentImage:{
       type: DataTypes.STRING
