@@ -49,13 +49,28 @@ db.sequelize.sync({ force: true}).then(function(){
       hasAdmin:1,
       userImage:'https://anap73.github.io/Bootstrap-Portfolio.github.io/assets/images/AntMeHead.png'
       }).then(function(outdata){
-        console.log('outdata',outdata.dataValues.password)
-        console.log('password hash working:', outdata.validPassword('password123'));
-        //VALIDPASSWORD EXAMPLE SEE ABOVE IF TRUE THEN VALIDATE USER
-        //###.then NEST### DB LIVE INSERT TEST DATA HERE
+        let today = new Date();
+        let threemonthsfromnow = today + 90;
+        db.contents.create({
+          contentType:'ARTICLE',
+          contentImage: 'https://media.giphy.com/media/dchERAZ73GvOE/giphy.gif',
+          contentTitle: 'The Raging Funk Monkey',
+          contentText: 'I love the Raging Monkey because he is funky and a monkey. This makes for many happy monkey funky moments. One day I was sitting alone in my bedroom and the raging monkey assault me. Would do again!',
+          liveFrom: today,
+          liveUntil: threemonthsfromnow,
+          live: true,
+          upvote: 0,
+          downvote: 0,
+          updatedAt: today,	
+          createdAt:today}).then(function(outdata){
+           
+          console.log("App listening at http://localhost:" + PORT);
+            
+          });
+        
       });
       
-    console.log("App listening at http://localhost:" + PORT);
+    
   });
 })
 
