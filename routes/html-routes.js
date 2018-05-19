@@ -73,11 +73,14 @@ module.exports = function (app) {
 
   /* Admin Site route */
   app.get("/admin", function (req, res) {
-
+    let pageData = {
+      name: req.user.email,
+      userObj: req.user,
+    };
     if(req.user.hasAdmin){
-      res.render("admin");
+      res.render("admin", pageData);
     }else {
-      res.render("index");
+      res.render("index" , pageData);
     }
     
   });
