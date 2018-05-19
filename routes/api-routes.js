@@ -91,12 +91,19 @@ module.exports = function(app){
     //   defaultValue: false      }
     // }
     // );
-   
-    
     }       
 );
 
   /* Post Route for new post/articles */
+  app.post("/api/articles" , function (req , res){
+    if(req.user){
+    }
+  });
+
+  app.post("/api/posts" , function(req , res){
+    if(req.user){
+    }
+  });
 
   /* Put Route for editting existing post */
 
