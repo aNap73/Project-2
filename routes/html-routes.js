@@ -73,7 +73,13 @@ module.exports = function (app) {
 
   /* Admin Site route */
   app.get("/admin", function (req, res) {
-    res.render("admin");
+
+    if(req.user.hasAdmin){
+      res.render("admin");
+    }else {
+      res.render("index");
+    }
+    
   });
 
   /* Homepage route */
