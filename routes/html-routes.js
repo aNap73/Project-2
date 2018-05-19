@@ -13,10 +13,15 @@ module.exports = function (app) {
     name: "test"
   }
 
+  app.get("/logintest" ,function(req , res){  
+    res.render("logintest" , ex);
+  });
+    
   /* Homepage route */
-app.get("/" ,function(req , res){  
+app.get("*" ,function(req , res){  
     res.render("index" , ex);
 });
+
 
  
 }
