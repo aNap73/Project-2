@@ -1,0 +1,72 @@
+<h1>Admin Page</h1>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-4" id="articles">
+
+      <form>
+
+        <div class="form-group">
+
+          <label for="search-articles">Search Articles</label>
+          <input type="text" class="form-control" id="search-articles" placeholder="Name of article">
+
+        </div>
+
+      </form>
+
+      <div class="returned-articles">
+
+        {{ articles }}
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4" id="users">
+
+      <form>
+
+        <div class="form-group">
+
+          <label for="search-users">Search Users</label>
+          <input type="text" class="form-control" id="search-users" placeholder="Enter a username">
+
+        </div>
+
+      </form>
+
+      <div class="returned-users">
+
+        {{ users }}
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4" id="posts">
+
+      <form>
+
+        <div class="form-group">
+
+          <label for="search-posts">Search Posts</label>
+          <input type="text" class="form-control" id="search-posts" placeholder="???">
+
+        </div>
+
+      </form>
+
+      <div class="returned-posts">
+
+        {{ posts }}
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
