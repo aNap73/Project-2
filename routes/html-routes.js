@@ -13,19 +13,19 @@ module.exports = function (app) {
     name: "test"
   }
 
-  app.get("/logintest" ,function(req , res){  
-    res.render("logintest" , ex);
+  app.get("/logintest", function (req, res) {
+    res.render("logintest", ex);
   });
-    
+
+  /* Admin Site route */
+  app.get("/admin", function (req, res) {
+    res.render("admin", ex);
+  });
+
   /* Homepage route */
-app.get("*" ,function(req , res){  
-    res.render("index" , ex);
-});
+  app.get("*", function (req, res) {
+    res.render("index", ex);
+  });
 
-/* Admin Site route */
-app.get("/admin" , function(req , res){
-  res.render("admin" , ex);
-})
 
- 
 }
