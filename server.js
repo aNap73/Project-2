@@ -46,6 +46,7 @@ db.sequelize.sync({ force: true}).then(function(){
       email:'napolitano.anthony@yahoo.com',
       password:'password123',
       onBoardId:1,
+      hasAdmin:1,
       userImage:'https://anap73.github.io/Bootstrap-Portfolio.github.io/assets/images/AntMeHead.png'
       }).then(function(outdata){
         console.log('outdata',outdata.dataValues.password)
