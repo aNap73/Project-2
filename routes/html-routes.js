@@ -87,11 +87,14 @@ module.exports = function (app) {
       };
     }else{
         res.render("index", pageData);
-      }
+      }    
+  });
 
-        
-    
-    
+  app.get("/articles" , function (req, res){ 
+
+    if(!req.query){
+      db.contents.findAll();
+    }
   });
 
   /* Homepage route */
