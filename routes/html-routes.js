@@ -90,13 +90,6 @@ module.exports = function (app) {
       }    
   });
 
-  app.get("/articles" , function (req, res){ 
-
-    if(!req.query){
-      db.contents.findAll();
-    }
-  });
-
   /* Homepage route */
   app.get("*", function (req, res) {
     let pageData = {};

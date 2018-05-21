@@ -30,8 +30,8 @@ app.set("view engine" , "handlebars");
 // IMPORTING & SERVICE SETUP
 
 // ROUTES / CONTROLLERS
-require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 // ROUTES / CONTROLLERS
 
 
