@@ -67,6 +67,57 @@ db.sequelize.sync({ force: true}).then(function(){
           console.log("App listening at http://localhost:" + PORT);
             
           });
+
+          db.contents.create({
+            contentType:'COMMENT',
+            contentImage: 'https://media.giphy.com/media/dchERAZ73GvOE/giphy.gif',
+            contentTitle: 'The Raging Funk Monkey',
+            contentText: 'hahahahaha',
+            liveFrom: today,
+            liveUntil: threemonthsfromnow,
+            live: true,
+            upvote: 0,
+            downvote: 0,
+            updatedAt: today,	
+            createdAt:today}).then(function(outdata){
+             
+            console.log("App listening at http://localhost:" + PORT);
+              
+            });
+
+            db.contents.create({
+              contentType:'COMMENT',
+              contentImage: 'https://media.giphy.com/media/dchERAZ73GvOE/giphy.gif',
+              contentTitle: 'The Raging Funk Monkey',
+              contentText: 'hahahahaha this is a filler test to see if my shit is working!!!!',
+              liveFrom: today,
+              liveUntil: threemonthsfromnow,
+              live: true,
+              upvote: 0,
+              downvote: 0,
+              updatedAt: today,	
+              createdAt:today}).then(function(outdata){
+               
+              console.log("App listening at http://localhost:" + PORT);
+                
+              });
+
+            db.contents.create({
+              contentType:'ARTICLE',
+              contentImage: 'https://media.giphy.com/media/dchERAZ73GvOE/giphy.gif',
+              contentTitle: 'SICK FLOW',
+              contentText: 'jbfewfbefbewfjebfewhb eo e ewoeb oweh bewoh beoqb pqfpqej qe pjqepwecb ewpbjqwe b pw  pqqwh bwohcbwqouhwbe ochuweb phweqbc whbc weuhcb ewqhub wehcbweq bewcewbc wbcuqbcnb chwebc hbcwhc wehcbwohcbhwbcweuhcweocubwuhcbwecuhewbc owcbw c bwouc bweocuwec',
+              liveFrom: today,
+              liveUntil: threemonthsfromnow,
+              live: true,
+              upvote: 0,
+              downvote: 0,
+              updatedAt: today,	
+              createdAt:today}).then(function(outdata){
+               
+              console.log("App listening at http://localhost:" + PORT);
+                
+              });
         
       });
       

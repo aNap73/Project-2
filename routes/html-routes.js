@@ -78,36 +78,112 @@ module.exports = function (app) {
       pageData = {
         name: req.user.email,
         userObj: req.user,
-        happyMonkeys:'Bill'
+        happyMonkeys: 'Bill'
       };
-      if(req.user.hasAdmin){
-        res.render("admin",pageData);
-      }else {
+      if (req.user.hasAdmin) {
+        res.render("admin", pageData);
+      } else {
         res.render("index", pageData);
       };
-    }else{
-        res.render("index", pageData);
-      }
+    } else {
+      res.render("index", pageData);
+    }
 
-        
-    
-    
+
+
+
   });
+
+  app.get("/api/postArticle", function (req, res) {
+    res.render("postArticle")
+  })
 
   /* Homepage route */
   app.get("*", function (req, res) {
     let pageData = {};
-    pageData = {
-      
-      happyMonkeys:'Bill'
-    };
-    if (req.user) {
-      pageData.happyMonkeys= 'Bill Logged in';
-      pageData.name = req.user.email;
-      pageData.userObj = req.user;
-    }
+    let commentData = {};
+
+    db.contents.findAll({
+      where: {
+        contentType: "ARTICLE"
+      }
+    }).then(function (data) {
+
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].contentType === "ARTICLE") {
+          var testText = data[i].contentText;
+          var testTit = data[i].contentTitle;
+          var type = data[i].contentType;
+        }
+        
+      }
+      console.log(data);
+
+      pageData = [{
+        mainArticle: data,
+
+        contentType: type,
+
+        contentTitle: testTit,
+
+        contentText: testText,
+
+      }];
+
     
-    res.render("index", pageData);
+      if (req.user) {
+
+        pageData = [{
+          mainArticle: data,
+
+          contentType: type,
+
+          contentTitle: testTit,
+
+          contentText: testText,
+
+        }];
+
+
+        pageData.name = req.user.email;
+        pageData.userObj = req.user;
+      }
+
+
+
+      db.contents.findAll({
+        where: {
+          contentType: "COMMENT"
+        }
+      }).then(function (outData) {
+        if (!outData) {
+          console.log("this isnt working! I CANT FIND UR COMMENT DATA");
+        } else {
+          for (var i = 0; i < outData.length; i++) {
+
+           
+          var commentText = outData[i].contentText;
+            
+          }
+           console.log(commentText);
+          commentData = [{
+            commentsNum: outData,
+            comments: commentText,
+
+          }]
+
+          res.render("index", {
+            articles: pageData,
+            commentsObj: commentData,
+          });
+
+          // res.json(pageData);
+        }
+      })
+    })
+
+
+
   });
 
 

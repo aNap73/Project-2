@@ -1,28 +1,42 @@
- <div class="container">
-    <div class="row">
-      <div class="col-7" id="mainContArea">
-        <p>HAPPY FUCKING | 
-       
-            {{happyMonkeys}}           
-       
-       | MONKEY</p>
-      </div>
-      <div class="col-4">
-        <form>
-          <div class="form-group">
-            <label for="exampleTextarea">Post A Comment</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-          </div>
-          <button type="submit" aria-label="this is a test button">Submit</button>
-        </form>
-        <p>comment section where all the aids lives and dies</p>
-        <div class="col-12" id="commentSection">
-          <p> this is somethign that would be an example comment!</p>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-7" id="mainContArea">
 
-      </div>
+
+      <ul>
+        {{#each articles}}
+        {{#each mainArticle}}
+        <li><h3>{{contentTitle}}</h3></li>
+        <h5>{{contentType}}</h5>
+          <p>{{contentText}}</p>
+          
+        {{/each}}
+        {{/each}}
+      </ul>
+
+
     </div>
+    <div class="col-4">
+      <form>
+        <div class="form-group">
+          <label for="exampleTextarea">Post A Comment</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+        </div>
+        <button type="submit" aria-label="this is a test button">Submit</button>
+      </form>
+      <p>comment section where all the aids lives and dies</p>
+      <div class="col-12" id="commentSection">
+        <ul>
+        {{#each commentsObj }}
+        {{#each commentsNum}}
+        <li>{{contentText}}</li>
+        {{/each}}
+        {{/each}}
+      </ul>
+      </div>
 
-
+    </div>
   </div>
 
+
+</div>
