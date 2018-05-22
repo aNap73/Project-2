@@ -13,9 +13,12 @@ $(document).ready(function () {
         for(var i = 0; i < response.length; i++){
           console.log(response);
           $(".display").append("Content ID: " + response[i].contentId + "<br/>");
+          $(".display").append("Content Type: " + response[i].contentType + "<br/>");
           $(".display").append("Image: " + response[i].contentImage + "<br/>");
           $(".display").append("Title: " + response[i].contentTitle + "<br/>");
-          $(".display").append("Content Type: " + response[i].contentType + "<br/>");
+          $(".display").append("Content Body: " + response[i].contentText + "<br/>");
+          $(".display").append("Live: " + response[i].live + "<br/>");
+          
         }
         //$(".display").html(prettyPrint);
 
