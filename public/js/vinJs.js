@@ -6,7 +6,8 @@ $(function() {
 
     var newPost = {
       title: $("#articleName").val().trim(),
-      text: $("#artBody").val().trim()
+      text: $("#artBody").val().trim(),
+      type: "ARTICLE",
     };
 
     // Send the POST request.
@@ -14,25 +15,10 @@ $(function() {
       type: "POST",
       data: newPost
     }).then(
-      function() {
-        console.log("created new cat");
+      function(data, status) {
+        console.log("created a new post");
         // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
-
-  $(".delete-cat").on("click", function(event) {
-    var id = $(this).data("id");
-
-    // Send the DELETE request.
-    $.ajax("/api/cats/" + id, {
-      type: "DELETE"
-    }).then(
-      function() {
-        console.log("deleted cat", id);
-        // Reload the page to get the updated list
-        location.reload();
+        window.location.replace("/");
       }
     );
   });
