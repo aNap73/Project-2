@@ -32,7 +32,17 @@ module.exports = function (app) {
             
             req.login(data.email, function(err) {
               console.log('before redirect');
-              res.redirect("/");
+              let pageData = {
+                regInit: {
+                  value: true
+                }
+
+              };
+              pageData.happyMonkeys = 'Bill Logged in';
+              pageData.name = data.email;
+              pageData.userObj = data;
+              res.render("index", pageData);
+              //res.redirect("/");
               return;
   
             });
