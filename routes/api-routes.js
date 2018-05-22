@@ -12,6 +12,53 @@ module.exports = function (app) {
       route: "/"
     });
   });
+
+  app.post("/", function (req, res) {
+    console.log("INCOMING COMMENT POST");
+
+    db.contents.create({
+
+      contentType: req.body.type,
+      contentText: req.body.text
+
+    }).then(function (data) {
+      if (!data) {
+        console.log("this isnt working");
+
+      } else {
+        res.json({
+          data
+        });
+      }
+    })
+  });
+
+  app.post("/api/postArticle", function (req, res) {
+    console.log("INCOMING ARTICLE POST");
+
+    db.contents.create({
+
+      contentType: req.body.type,
+      contentText: req.body.text,
+      contentTitle: req.body.title,
+
+    }).then(function (data) {
+      if (!data) {
+        console.log("this isnt working");
+
+      } else {
+        res.json({
+          data
+        });
+      }
+    })
+  });
+
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+    res.json({
+      route: "/"
+    });
+  });
   app.post("/api/register/", function (req, res) {
     //IF INCOMING DATA GOOD
     console.log('INCOMING REG REQUEST');
@@ -38,9 +85,9 @@ module.exports = function (app) {
             onBoardId: newOnBoardId,
             userImage: 'https://anap73.github.io/Bootstrap-Portfolio.github.io/assets/images/AntMeHead.png'
           }).then(function (outdata) {
-
-
             //SEND EMAIL WIH link to should be set to .get <ourpage>/finalizeRegistration/email:/onBoardId:    
+            console.log('will this work');
+            siteSendMail(emailurltop, req.body.email, newOnBoardId);
             //INDICATE SUCCESS
             res.json({
               route: "/register/success"
@@ -55,8 +102,8 @@ module.exports = function (app) {
             console.log('data.onBoardId should be populated: ', data.onBoardId);
             console.log('data.email should be populated: ', data.email);
             //
-            //SEND EMAIL WIH link to should be set to .get <ourpage>/finalizeRegistration/email:/onBoardId:    
-            //INDICATE SUCCESS        
+
+            siteSendMail(emailurltop, req.body.email, newOnBoardId);
             res.json({
               route: "/register/success"
             });
@@ -74,32 +121,6 @@ module.exports = function (app) {
 
 
 
-    //IF EXISTS
-    // hasEmailConfirmed:{
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue: false        
-    // },
-    // hasAcceptedTerms:{
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue: false
-    // },
-    // hasAdmin:{
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue: false
-    // }, 
-    // hasContent:{
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue: false
-    // },
-    // hasPost:{
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue: false
-    // },      
-    // hasBan:{
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue: false      }
-    // }
-    // );
   });
 
   /* Post Route for new post/articles */
@@ -111,7 +132,7 @@ module.exports = function (app) {
         contentText: req.body.contentText,
         contentImage: req.body.contentImage,
         contentTitle: req.body.contentTitle
-      }).then(function(newPost){
+      }).then(function (newPost) {
         res.json(newPost);
       });
     }
@@ -140,13 +161,9 @@ module.exports = function (app) {
   });
 
   /* Get route for getting all users */
-  app.get("/api/get/users" , function (req , res) {
-    db.users.findAll({}).then(function(dbUsers){
+  app.get("/api/get/users", function (req, res) {
+    db.users.findAll({}).then(function (dbUsers) {
       res.json(dbUsers);
     });
   });
-
-
-  /* Put Route for editting existing post */
-
 }
