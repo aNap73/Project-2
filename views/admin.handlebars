@@ -1,72 +1,25 @@
-<h1>Admin Page</h1>
-
 <div class="container">
+
+  <h1>Admin</h1>
 
   <div class="row">
 
-    <div class="col-md-4" id="articles">
+    <div>
 
-      <form>
+      <button class="btn btn-primary" id="all-articles">Get all Articles</button>
 
-        <div class="form-group">
+      <button class="btn btn-primary" id="all-articles">Get all Articles</button>
 
-          <label for="search-articles">Search Articles</label>
-          <input type="text" class="form-control" id="search-articles" placeholder="Name of article">
+      <button class="btn btn-primary" id="all-articles">Get all Articles</button>
 
-        </div>
-
-      </form>
-
-      <div class="returned-articles">
-
-        {{ articles }}
-
-      </div>
-
-    </div>
-
-    <div class="col-md-4" id="users">
-
-      <form>
-
-        <div class="form-group">
-
-          <label for="search-users">Search Users</label>
-          <input type="text" class="form-control" id="search-users" placeholder="Enter a username">
-
-        </div>
-
-      </form>
-
-      <div class="returned-users">
-
-        {{ users }}
-
-      </div>
-
-    </div>
-
-    <div class="col-md-4" id="posts">
-
-      <form>
-
-        <div class="form-group">
-
-          <label for="search-posts">Search Posts</label>
-          <input type="text" class="form-control" id="search-posts" placeholder="???">
-
-        </div>
-
-      </form>
-
-      <div class="returned-posts">
-
-        {{ posts }}
-        
-      </div>
+      <br>
+      
+      <div class="display"></div>
 
     </div>
 
   </div>
 
 </div>
+
+<script src="./js/jsn.js"></script>

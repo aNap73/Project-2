@@ -156,14 +156,14 @@ module.exports = function (app) {
         userObj: req.user,
         happyMonkeys: 'Bill'
       };
-      if (req.user.hasAdmin) {
-        res.render("admin", pageData);
-      } else {
-        res.render("index", pageData);
+      if(req.user.hasAdmin){
+        return res.render("admin",pageData);
+      }else {
+        return res.render("index", pageData);
       };
-    } else {
-      res.render("index", pageData);
-    }
+    }else{
+        res.render("index", pageData);
+      }    
   });
 
   /* Homepage route */
@@ -231,8 +231,8 @@ module.exports = function (app) {
         }];
 
 
-        pageData.name = req.user.email;
-        pageData.userObj = req.user;
+        pageData[0].name = req.user.email;
+        pageData[0].userObj = req.user;
       }
 
 
@@ -255,9 +255,12 @@ module.exports = function (app) {
            
           commentData = [{
             commentsNum: outData,
-            comments: commentText,
-            email: req.user.email  
+            comments: commentText
           }]
+
+          if(req.user){
+            commentData[0].email = req.user.email
+          }
 
           res.render("index", {
             articles: pageData,

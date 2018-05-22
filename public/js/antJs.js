@@ -75,7 +75,8 @@ var antJs = {
       data: newLogin
     }).then(
       function(data, status) {
-        window.location.replace(data);
+        console.log(data);
+        window.location.replace(data.route);
        
       }
     );
