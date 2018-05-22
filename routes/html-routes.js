@@ -81,9 +81,9 @@ module.exports = function (app) {
         happyMonkeys:'Bill'
       };
       if(req.user.hasAdmin){
-        res.render("admin",pageData);
+        return res.render("admin",pageData);
       }else {
-        res.render("index", pageData);
+        return res.render("index", pageData);
       };
     }else{
         res.render("index", pageData);
