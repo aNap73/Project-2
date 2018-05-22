@@ -34,7 +34,7 @@
       
       {{!-- this has to be the name of the item within the object --}}
       {{#if userObj}}
-        <p>Welcome! </p>{{name}}
+        <p>Welcome! </p>{{userObj.email}}
         <a href='/logout'>Log Out?</a>
       {{else}}  
         <a href='/login'>Log In!</a>
