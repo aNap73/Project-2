@@ -33,25 +33,27 @@
     <div class="nav-item">
       
       {{!-- this has to be the name of the item within the object --}}
-      {{#if userObj}}
-        <p>Welcome! </p>{{userObj.email}}
-        <a href='/logout'>Log Out?</a>
+      {{#if userObj}}        
+        <a class="nav-link" href="/">Welcome! {{userObj.email}}</a>     
       {{else}}  
         <a href='/login'>Log In!</a>
-      {{/if}}
-      
+      {{/if}}      
     </div>
     <div class="dropdown open">
+       {{#if userObj}}
       <button class="btn btn-secondary dropdown-toggle" type="button" id="optionList" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
         Options
       </button>
+       {{/if}}
       <div class="dropdown-menu">
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="/postArticle">Edit Article</a>
+        <a class="dropdown-item" href="/logout">Log Out</a>           
         {{#if userObj}}
         {{#if userObj.hasAdmin}}
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/postArticle">Edit Article</a>
         <a class="dropdown-item" href="/admin">Admin Page</a>
+        
         {{/if}}
         {{/if}}
       </div>
