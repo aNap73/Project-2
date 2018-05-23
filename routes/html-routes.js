@@ -136,11 +136,7 @@ module.exports = function (app) {
       }
     }
   });
-  app.get("/logout", function (req, res) {
-    let pageData = {};
-    req.logout();
-    res.render("index", pageData);
-  });
+  
   app.get("/login", function (req, res) {
     //console.log(req.user);
     let pageData = {};
@@ -156,30 +152,16 @@ module.exports = function (app) {
         userObj: req.user,
         happyMonkeys: 'Bill'
       };
-      if(req.user.hasAdmin){
-        return res.render("admin",pageData);
-      }else {
-        return res.render("index", pageData);
-      };
-    }else{
+      if (req.user.hasAdmin) {
+        res.render("admin", pageData);
+      } else {
         res.render("index", pageData);
-      }    
+      };
+    } else {
+      res.render("index", pageData);
+    }
   });
 
-  /* Homepage route */
-  // app.get("*", function (req, res) {
-  //   let pageData = {};
-  //   pageData = {
-  //     happyMonkeys: 'Bill'
-  //   };
-
-  //   if (req.user) {
-  //     pageData.happyMonkeys = 'Bill Logged in';
-  //     pageData.name = req.user.email;
-  //     pageData.userObj = req.user;
-  //   }
-  //   res.render("index", pageData);
-  // });
   app.get("/postArticle", function (req, res) {
     if (req.user) {
       pageData = {
@@ -189,7 +171,6 @@ module.exports = function (app) {
       };}
     res.render("postArticle", pageData)
   });
-
   /* Homepage route */
   app.get("*", function (req, res) {
     let pageData = {};
@@ -198,7 +179,9 @@ module.exports = function (app) {
     db.contents.findAll({
       where: {
         contentType: "ARTICLE"
-      }
+      },
+      order: [
+        ['createdAt', 'DESC']]
     }).then(function (data) {
 
       for (var i = 0; i < data.length; i++) {
@@ -218,8 +201,7 @@ module.exports = function (app) {
 
         contentTitle: testTit,
 
-        contentText: testText,
-
+        contentText: testText
       }];
 
     
@@ -246,7 +228,10 @@ module.exports = function (app) {
       db.contents.findAll({
         where: {
           contentType: "COMMENT"
-        }
+        },
+      order: [
+        ['createdAt', 'DESC']
+      ]
       }).then(function (outData) {
         if (!outData) {
           console.log("this isnt working! I CANT FIND UR COMMENT DATA");
@@ -261,9 +246,9 @@ module.exports = function (app) {
            
           commentData = [{
             commentsNum: outData,
-            comments: commentText
+            comments: commentText,
+              
           }]
-
           if(req.user){
             commentData[0].email = req.user.email
           }

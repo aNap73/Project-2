@@ -7,6 +7,10 @@ var db = require("../models");
 var siteSendMail = require('../utilities/RegEmail.js');
 const emailurltop = 'http://127.0.0.1:3000';
 module.exports = function (app) {
+  app.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect('/');
+    });
   app.post("/", function (req, res) {
     console.log("INCOMING COMMENT POST");
 
@@ -110,11 +114,6 @@ module.exports = function (app) {
         route: "/register/fail"
       });
     }
-
-
-
-
-
   });
 
   /* Post Route for new post/articles */
@@ -134,7 +133,7 @@ module.exports = function (app) {
 
   /* Get route for getting all posts */
   app.get("/api/get/posts/", function (req, res) {
-    db.contents.findAll({
+     db.contents.findAll({
       where: {
         contentType: "COMMENT"
       }
@@ -145,6 +144,7 @@ module.exports = function (app) {
 
   /* Get route for getting all articles */
   app.get("/api/get/articles", function (req, res) {
+  
     db.contents.findAll({
       where: {
         contentType: "ARTICLE"
