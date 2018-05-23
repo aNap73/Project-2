@@ -20,11 +20,14 @@ if(process.env.DBPWD){
   config.password=process.env.DBPWD;
 }
 if(process.env.JAWSDB_URL){
-  console.log('heroku detected');
-  console.log(process.env.JAWSDB_URL.toString());
-  config.use_env_variable = process.env.JAWSDB_URL;
+  config.database = process.env.JAWSDB_DB;
+  config.username = process.env.JAWSDB_USER;
+  config.password= process.env.JAWSDB_PWD;
+  config.host = process.env.JAWSDB_HOST
+  config.dialect='mysql';
+  
 }
-if (config.use_env_variable) {
+if (1===2) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
