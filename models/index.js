@@ -15,6 +15,7 @@ var db        = {};
 //AAN 2018.05.05 Added dotenv in for windows developers with passwords
 //For apple as long as you don't define DBPWD in your .env file. Should be fine
 console.log('CHECK THIS OUT');
+//comment
 if(process.env.JAWSDB_URL){
   config.use_env_variable = process.env.JAWSDB_URL;
 }else if(process.env.DBPWD){  
