@@ -21,7 +21,8 @@ if(process.env.DBPWD){
 }
 if(process.env.JAWSDB_URL){
   console.log('heroku detected');
-  config.use_env_variable = process.env.JAWSDB_URL;
+  console.log(process.env.JAWSDB_URL);
+  config.use_env_variable = process.env.JAWSDB_URL.toString();
 }
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
