@@ -180,9 +180,15 @@ module.exports = function (app) {
   //   }
   //   res.render("index", pageData);
   // });
-  app.get("/api/postArticle", function (req, res) {
-    res.render("postArticle")
-  })
+  app.get("/postArticle", function (req, res) {
+    if (req.user) {
+      pageData = {
+        name: req.user.email,
+        userObj: req.user,
+        happyMonkeys: 'Bill'
+      };}
+    res.render("postArticle", pageData)
+  });
 
   /* Homepage route */
   app.get("*", function (req, res) {

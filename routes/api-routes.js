@@ -4,15 +4,9 @@
 var path = require("path");
 var passport = require("../config/passport");
 var db = require("../models");
-
+var siteSendMail = require('../utilities/RegEmail.js');
+const emailurltop = 'http://127.0.0.1:3000';
 module.exports = function (app) {
-
-  app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    res.json({
-      route: "/"
-    });
-  });
-
   app.post("/", function (req, res) {
     console.log("INCOMING COMMENT POST");
 
@@ -166,4 +160,6 @@ module.exports = function (app) {
       res.json(dbUsers);
     });
   });
+
+
 }
