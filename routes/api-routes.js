@@ -5,7 +5,7 @@ var path = require("path");
 var passport = require("../config/passport");
 var db = require("../models");
 var siteSendMail = require('../utilities/RegEmail.js');
-const emailurltop = 'http://127.0.0.1:3000';
+const emailurltop = 'https://stark-cliffs-26986.herokuapp.com/';
 module.exports = function (app) {
   app.get("/logout", function (req, res) {
     req.logout();
@@ -15,10 +15,8 @@ module.exports = function (app) {
     console.log("INCOMING COMMENT POST");
 
     db.contents.create({
-
       contentType: req.body.type,
       contentText: req.body.text
-
     }).then(function (data) {
       if (!data) {
         console.log("this isnt working");
