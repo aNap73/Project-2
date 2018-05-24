@@ -12,12 +12,12 @@ The basic idea behind Game Blog was to create a place that we could chat about i
 
 The original project plan was written by Anthony and accepted and altered by the group before we split up the work and began. Throughout the project we had many set backs. Illness, new jobs, unplanned buisness trips, and the fact MVC, Handlebars and Passport contributed to alot of features being cut. 
 
-Fortunately, we rallied in the end and given some latenights.. heh really late nights.. we got our site up on heroku with what I would call minimal functionality. In my opinion this was a great success as in the real world Project teams can get even crazier as can life. 
+Fortunately, we rallied in the end and given some VERY latenights.. We got our site up on heroku with what I would call minimal functionality. In my opinion this was a great success as in the real world Project teams can get even crazier as can life. 
 
 
 ## Project Plan
 
-![Project Plan](https://media.giphy.com/media/r6nDKpBpVKz2U/giphy.gif)
+![ProjectPlan](https://media.giphy.com/media/r6nDKpBpVKz2U/giphy.gif)
 
 Anthony was responsible for turning the informal group project discussions into a project plan.
 You can get a kick out of the MS Paint speed specs as I was forced to write our plan in one long night.
