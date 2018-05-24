@@ -10,70 +10,68 @@
 
 The basic idea behind Game Blog was to create a place that we could chat about intersting games and gaming news, write articles and interact with a gaming community.
 
-Throughout the project we had many set backs. Illness, new jobs, unplanned buisness trips, and the fact MVC, Handlebars and Passport contributed to alot of features being cut. 
+Throughout the project we had many set backs. Illness, new jobs, unplanned buisness trips, and the our newness with MVC, Handlebars and Passport contributed to a alot of features being cut. 
 
-Fortunately, we rallied in the end and given some VERY latenights.. We got our site up on heroku with what I would call minimal functionality. In my opinion this was a great success as in the real world Project teams can get even crazier as can life. 
+Fortunately, we rallied in the end and given some VERY latenights.. We got our site up on heroku with what I would call minimal functionality. In my opinion, this was a great success as in the, real world Project don't get any easier in my experience. 
 
 ## First of all [Alex Rosenkranz...](https://github.com/arosenkranz)
 
-Our fearless leader. Thanks Alex, for ALL the help, the merging advice, the support, not to mention all the learnings. Thank you so much! I know I speak for all of us when I say that you have really helped us grow as web developers. 
+Our fearless leader. Thanks Alex, for ALL the help, the merging advice, the support, not to mention all the learnings. Thank you so much! I know I speak for all of us when I say that you have really helped us grow as web developers.
 
 ## Project Plan
 
 ![ProjectPlan](https://media.giphy.com/media/mciMfMijRXIfm/giphy.gif)
 
-I was responsible for turning the informal group project discussions into a project plan that we then discussed and altered, before I broke it down quickly into tasks, which I wish I would have done differently but, that's how we learn folks. I think next time, I'll seperate concerns differently as the merge that followed whew... thank you source safe for teaching me to 'ride the beast'.  
+I was responsible for turning the informal group project discussions into a project plan that we then discussed and altered, before I broke it down quickly, into tasks. I wish I would have done that a little differently, but I guess that's how we learn folks. Next time, I'll seperate concerns as to reduce critical path and merge times, it's helpful to have that experience. 
 
-You may get a kick out of the MS Paint speed specs I was deployed to illustrate our plans, sadly my favorite teddy pixel bear never made it in because we don't have cloudinary atm, but they get the point across and the humor of it was alot of fun for us.
+You may get a kick out of the MS Paint illustrations in the Project Plan, so I've included our Project plan. Sadly my favorite teddy pixel bear, never made it in. Cloudinary was our first feature pull, but the document gets the point across and the humor of it was alot of fun for us. 
 
-While our project did not reach the full depth of the plans, and lots was forgotten or changed during the battle,  in the end we got our site up, and secured. Cause that's what devs do. 
+The text of the docuent is not very friendly or readable please forgive me for that, it was done in huge rush, and was mostly to remind a bunch of devs about a ton of conversations, slacks, thoughts, smoke signals and other coms and keep it central in one place.
+
+While our project did not reach the full depth of the plans, and lots was forgotten or changed during the battle,  in the end we got our site up, and secured. Cause that's what devs do. I'm very proud of our team. 
 
 We hope someday to finish these items and all the others in our heads, I'm sure we will and more.
+
+Given I've seen teams take months to put up a site what we did here in 2 weeks with lots of bad timing luck... impressive in my opinion.
 
 [For a hoot check out the original project plan](https://docs.google.com/document/d/1orlH0IazXP3EhP4c3Up1wwwvlq-nKstTUYJT41yhEfY/edit?usp=sharing)
 
 ## MVC
 ![FRAMEWORK](https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif)
 
-While I was hard at work building the plan, Jason was hard at work building and deploying our MVC base model and file structure to our git repo. This was great as a basic MVC model already has it's own plan and jason was quick to get it delivered and working.
+While I was hard at work building the plan, Jason was hard at work, at work, and also was able to build and deploying our MVC base model and file structure to the git repo for out team. This was great as a basic MVC model already has it's own plan and jason was quick to get it delivered and working, while I was trying to document our planning meetings in the Project docs.
 
-It's interesting how MVC seems like a burden at first, but once you get rolling and have the things your looking for in obvious places, it makes things ... possible and even easy.
+It's interesting how MVC seems like a burden at first, but once you get rolling and have the things your looking for in obvious places, it makes things ... possible, and easy.
 
 ## Data Base, Passport, Login
 
 ![TECH](https://media.giphy.com/media/DnVvp3yHjdhyo/giphy.gif)
 
-Once the MVC framework was deployed the next task fell to me. I built the database managed by a sequelize orm, our original four tables got paired down to two tables and the database got deployed. 
+Once the MVC framework was deployed the next task that fell to me was to build the database with the sequelize orm (Object Relational Model), our original four tables got paired down to two tables and the database got deployed. In a two week run, I just let basic truth tables go... no need to over engineer. I'm an old Db hacker do I was happy to just eat the sequelize stuff up... nom nom...
 
-The next part of the task was to integrate passport and bCrypt. I was pretty happy when I was able to get user passwords encrypted through passport. Feels like magestic magic... 
+The next part of the task was to integrate passport and bCrypt. I was pretty happy when I was able to get user passwords encrypted and logging in through passport. Feels like magestic magic...
 
-### OnBoarding(Register, Email validation and Eula with auto site logon)
+### OnBoarding (Register, Email validation and Eula with auto site logon)
 
 ![TITANIC](https://media.giphy.com/media/XOY5y7YXjTD7q/giphy.gif)
 
-On Boarding, having intimate knowledge of the sites db models and passport installation and having written it before. I went a head and did this also. I did stop working here to let my team catch up and contribute a little, as I had more time then they did for the project.
+On Boarding, having intimate knowledge of the sites db models and passport installation and having written it on boarding before. I went a head and did this also. I did stop working after this task however as I need some rest and my team was raring to go, I had more time then they did for the project, so I did my best to share, and balance, I hope I did ok.
 
-There are some pretty cool security features in this process. The email has a random id associated with the user. The user must have access to a valid email account and since that email is unique in all the world, we have a way to control our users a bit...
+There are some pretty cool security features in this process. It works just like alot of the best sites using an email address to id a user, and using 1 way hashed passwords. Setting this up with passport and sequelize for a more seasoned developer was a bit scary. It's hard to give up wanting to know how ALL the things work... I may never.
 
-The email itself contains a link (correctly either prod, or local depeding on the environment variables) that returns to a route that requires the random onBoard Id and the users email.  
+So this task went a little longer than I expected, and it contributed to increasing our critical path, but having a secure on boarding system to track user content, is VERY IMPORTANT and can quickly end your enterprise or worse if not done correctly. So I feel it was time well spent.
 
-I'd like to take a moment to say Abu's work on getting nodemailer to work was crucial to our sites succes! Thanks Abu!
-
-If the route detects a valid user registration request, it displays the site EULA, makes the users onBoarding null (to defeat using eula as login), and autologin completes their registration process leaving them able to log on and start commenting.
-
-It was a difficult task and it went longer than we expected, but having a secure on boarding and a system to track user content, is VERY IMPORTANT and can quickly end your enterprise or worse if not done correctly.
+I'd like to take a moment to say thank you for Abu's work on getting nodemailer up and running. Unfortunately Abu, was very busy with work and other responsiblites at this time, but his help is always welcome effective and efficient, once again thanks Abu.
 
 ### Main page, Article Edit, Profanity filter, CSS styling
 
 ![CSS](https://media.giphy.com/media/yYSSBtDgbbRzq/giphy.gif)
 
-Vinny was responsible for main site look and feel, and even though he landed a new part time job and began working in the middle of the project (YEA VIN! WOOT), he still burnt late hours with Ant debugging... He was able to get his part of our project done. After his work we had less of a cruddy blob and more of a less cruddy blob. Like I said... we were in a hurry. DEAD LINES. 
+Vinny was responsible for main site look and feel, and even though he landed a new part time job and began working in the middle of the project (YEA VIN! WOOT! GRATZ MAN!), he still burnt late hours debugging with Ant remotely... He was able to get his part of our project DONE and it looks pretty great. After his work we had less of a cruddy blob and more Gamer Blog under construction. Like I said... we were in a hurry. DEAD LINES. 2 weeks.
 
-Vinny also made our Article Edit page only which is only available to admins, and allows us to create new Articles, we'd love it to edit existing Articles and hopefully, we will collectively have time to do this in the future. 
+Vinny also made our Article Edit page. However, it like admin are only which like the admin page are only available to admins. The Article Edit page allows us to create new Articles, in the future maybe we'll add an edit feature as well.  
 
-In addition Vinny added our profanity filter which I believe is one of the requirements for this assignment of which we also implemented bCrypt, passport and nodemailer. While you can still shenanigan yourself around our filter it does help with basic cursing.
- 
-I'm sure we'd all like to really get the site polished and we plan on still working on it. 
+In addition Vinny added our profanity filter, which was one of our new techs as required by the Project. We also implemented bCrypt, passport and nodemailer. While you can still shenanigan yourself around our filter it does help with basic cursing.
 
 ### Admin Page
 
@@ -82,7 +80,7 @@ I'm sure we'd all like to really get the site polished and we plan on still work
 BAN HAMMER! INCOMING!
 THE INTERNETS; OMG ITS FULL OF MUPPETS!
 
-While Vinny was hard at work styling our site, Jason was hard at work building our administrative tool. This task he managed with very little group help and produced our current admin page. Not an easy task at all as it was one of the most complicated and interactive pages on our site. Great Job and thanks Jason. 
+While Vinny was hard at work styling our site, Jason was hard at work building our administrative tool. This task he managed with very little group help and produced our current admin page. Not an easy task at all, as it was one of the most complicated and interactive pages on our site. Great Job and thanks Jason. 
 
 The admin page is secured by the user role administrator. Administrators however can use this impressive page to remove articles, comments and ban users... that's alot of routes in a very little time folks. Nice Job! WOOT! 
 
@@ -93,13 +91,13 @@ The admin page is secured by the user role administrator. Administrators however
 This project had a few moments that I thought were going to end it. The worst however was merging conflicts and debugging. Did I mention late nights? 
 
 I also deployed the site to Heroku, which... as always is a pleasure... <3 Heroku
-<3 ma Team. I realized after backing off a bit to let the guys have some fun... we might not make the deadline so... I went HAM... anywho... heroku is so easy... god I love it.
+<3 ma Team. I realized after backing off a bit to let the guys have some fun... we might not make the deadline so... I went HAM and got us up and running... anywho... heroku is so easy... god I love it. 
 
 ## My Closing Thoughts
 
 This project really felt a bit like the [Kobayashi_Maru](https://en.wikipedia.org/wiki/Kobayashi_Maru). It was a great learning experience and I wouldn't change a thing, I learned ALOT about managing a project, splitting up work, and a alot of new tech also. 
 
-While I can't speak for Jason and Vinny totally, I know I've watched them both "get it" as we worked on the MVC views models and passport stuff together alot. I hope they also learned a ton. We all had fun reprograming the simulator btw...  ;) and that's how we have a site!   
+While, I can't speak for Jason and Vinny totally, I know I've watched them both "get it" as we worked on the MVC views models and passport stuff together alot. I know they also learned a ton and are becoming excellent full stack developers. In the end we all had fun reprograming the starfleet simulator for game news...  ;) and that's the story of how we have a site!   
 
 I hope that we continue to work together on this site in Project3 as there is alot I think we can do with it to upgrade it. Images, password reset, etc...
 
