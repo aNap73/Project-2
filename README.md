@@ -92,12 +92,14 @@ The admin page is secured by the user role administrator. Administrators however
 
 This project had a few moments that I thought were going to end it. The worst however was merging conflicts and debugging. Did I mention late nights? 
 
-Ihony also deployed the site to Heroku, which... as always is a pleasure... <3 Heroku
-<3 ma Team.
+I also deployed the site to Heroku, which... as always is a pleasure... <3 Heroku
+<3 ma Team. I realized after backing off a bit to let the guys have some fun... we might not make the deadline so... I went HAM... anywho... heroku is so easy... god I love it.
 
 ## My Closing Thoughts
 
-This project really felt a bit like the [Kobayashi_Maru](https://en.wikipedia.org/wiki/Kobayashi_Maru). It was a great learning experience, I learned ALOT about managing a project, splitting up work, and a alot of new tech also. While I can't speak for Jason and Vinny totally, I know I've watched them both "get it" as we worked on the MVC views models and passport stuff together alot. I hope they also learned a ton. We all had fun reprograming the simulator btw...  ;) and that's how we have a site!   
+This project really felt a bit like the [Kobayashi_Maru](https://en.wikipedia.org/wiki/Kobayashi_Maru). It was a great learning experience and I wouldn't change a thing, I learned ALOT about managing a project, splitting up work, and a alot of new tech also. 
+
+While I can't speak for Jason and Vinny totally, I know I've watched them both "get it" as we worked on the MVC views models and passport stuff together alot. I hope they also learned a ton. We all had fun reprograming the simulator btw...  ;) and that's how we have a site!   
 
 I hope that we continue to work together on this site in Project3 as there is alot I think we can do with it to upgrade it. Images, password reset, etc...
 
