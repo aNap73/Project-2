@@ -41,7 +41,7 @@ It's interesting how MVC seems like a burden at first, but once you get rolling 
 
 Once the MVC framework was deployed the next task fell to Anthony who built a mysql database managed by a sequelize orm, our original four tables got paired down to two tables and the database got deployed. 
 
-The next part of the task was to integrate passport and bCrypt. I was pretty happy when
+The next part of the task was to integrate passport and bCrypt. I was pretty happy when I was able to get user passwords encrypted through passport. Feels like magestic magic...
 
 ### OnBoarding(Register, Email validation and Eula with auto site logon)
 
