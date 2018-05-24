@@ -159,5 +159,31 @@ module.exports = function (app) {
     });
   });
 
+  /* Delete route for deleting content */
+  app.delete("/api/delete/content/:id" , function(req,res){
+    db.contents.destroy({
+      where: {
+        contentId: req.params.id
+      }
+    }).then(function (dbContent){
+      res.json(dbContent);
+    });
+  });
+
+  /* Put route to ban a user */
+  app.put("/api/put/users/:id" , function(req,res){
+    db.users.update(
+      { 
+        hasBan: true
+      }, {
+        where: {
+          userId: req.params.id
+        }
+      }
+    ).then(function(banUser){
+      res.json(banUser);
+    });
+  });
+
 
 }
