@@ -38,5 +38,16 @@
   color: #858f4c;
 }
 
+.burger{
+  
+  height: 100px;
+  width: 300px;
+  padding: 3%;
+  background-image: url('/images/bloggerEdit.PNG');
+  background-position: top left;
+  background-size: 300px 100px;
 
+  background-repeat: no-repeat;
+  /*background-color: #6d6a5c;*/  
+}
 /* #858f4c */
