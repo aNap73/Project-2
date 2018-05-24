@@ -47,6 +47,7 @@ module.exports = function (sequelize , DataTypes){
       defaultValue: DataTypes.NOW},	
     createdAt:{
       type: DataTypes.DATE}
+       
     });
     
   return contents;

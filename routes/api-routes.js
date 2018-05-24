@@ -23,7 +23,8 @@ module.exports = function (app) {
 
     db.contents.create({
       contentType: filter.clean(req.body.type),
-      contentText: filter.clean(req.body.text)
+      contentText: filter.clean(req.body.text),
+      userUserId: req.user.userId
     }).then(function (data) {
       if (!data) {
         console.log("this isnt working");
@@ -38,13 +39,16 @@ module.exports = function (app) {
 
   app.post("/api/postArticle", function (req, res) {
     console.log("INCOMING ARTICLE POST");
-
+    if(!req.user){
+      res.json({});
+      return;
+    }
     db.contents.create({
 
       contentType: req.body.type,
       contentText:  filter.clean(req.body.text),
       contentTitle: filter.clean(req.body.title),
-
+      userUserId: req.user.userId
     }).then(function (data) {
       if (!data) {
         console.log("this isnt working");
@@ -129,7 +133,8 @@ module.exports = function (app) {
         contentType: "COMENT",
         contentText: filter.clean(req.body.contentText),
         contentImage: filter.clean(req.body.contentImage),
-        contentTitle: filter.clean(req.body.contentTitle)
+        contentTitle: filter.clean(req.body.contentTitle),
+        userUserId: req.user.userId
       }).then(function (newPost) {
         res.json(newPost);
       });

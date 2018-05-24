@@ -28,10 +28,10 @@ module.exports = function (app) {
               onBoardId: null },
             { where:{email: req.params.email}}
           ).then(function(data){
-            console.log('before login');
+            
             
             req.login(data.email, function(err) {
-              console.log('before redirect');
+
               let pageData = {
                 regInit: {
                   value: true
@@ -60,8 +60,7 @@ module.exports = function (app) {
     res.render("register", pageData);
   });
   app.get("/register/:regCode/", function (req, res) {
-    // console.log('regCodeIn: ', req.params.regCode);
-    // console.log('req.query.emailaddy', req.query.emailaddy);
+
     let pageData = {};
     if (req.params.regCode) {
       switch (req.params.regCode) {
@@ -109,7 +108,7 @@ module.exports = function (app) {
                       email: req.query.emailaddy,
                       autosecid: req.params.regCode  
                     };                    
-                    console.log('rendering eula', pageData2);
+                   
                     res.render("eula", pageData2);
                     return;
                   });
@@ -138,7 +137,7 @@ module.exports = function (app) {
   });
   
   app.get("/login", function (req, res) {
-    //console.log(req.user);
+    
     let pageData = {};
     res.render("logintmp", pageData);
   });
@@ -175,15 +174,18 @@ module.exports = function (app) {
   app.get("*", function (req, res) {
     let pageData = {};
     let commentData = {};
-
+  
     db.contents.findAll({
       where: {
         contentType: "ARTICLE"
       },
-      order: [
-        ['createdAt', 'DESC']]
+      include: [{
+        model: db.users,
+          required: false
+      }],
+        order: [['createdAt', 'DESC']]
     }).then(function (data) {
-
+      
       for (var i = 0; i < data.length; i++) {
         if (data[i].contentType === "ARTICLE") {
           var testText = data[i].contentText;
@@ -192,7 +194,7 @@ module.exports = function (app) {
         }
         
       }
-      console.log(data);
+      
 
       pageData = [{
         mainArticle: data,
@@ -229,30 +231,31 @@ module.exports = function (app) {
         where: {
           contentType: "COMMENT"
         },
+        include: [{
+          model: db.users,
+            required: false
+        }],        
       order: [
         ['createdAt', 'DESC']
       ]
       }).then(function (outData) {
-        if (!outData) {
-          console.log("this isnt working! I CANT FIND UR COMMENT DATA");
-        } else {
+        if (outData) {
+         
           for (var i = 0; i < outData.length; i++) {
-
-           
           var commentText = outData[i].contentText;
-            
           }
-           console.log(commentText);
+           
            
           commentData = [{
             commentsNum: outData,
-            comments: commentText,
-              
+            comments: commentText
+          
+                   
           }]
-          if(req.user){
-            commentData[0].email = req.user.email
-          }
-
+          //if(req.user){
+          //  commentData[0].email = outData[i].user.email
+          //}
+          
           res.render("index", {
             articles: pageData,
             commentsObj: commentData,

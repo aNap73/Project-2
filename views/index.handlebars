@@ -28,9 +28,9 @@
       <p>comment section</p>
       <div class="col-12" id="commentSection">
         <ul id="comments">
-        {{#each commentsObj }}
+        {{#each commentsObj}}
         {{#each commentsNum}}
-        <li>{{contentText}}-{{../email}}<p>{{createdAt}}</p></li>
+        <li>{{contentText}}-{{user.email}}<p>{{createdAt}}</p></li>
         {{/each}}
         {{/each}}
       </ul>
