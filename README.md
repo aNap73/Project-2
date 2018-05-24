@@ -84,7 +84,7 @@ BAN HAMMER!
 
 ### Debugging, Merging and Heroku deploy
 
-![DEBUG](https://media.giphy.com/media/aeIuSiMkcTsRO/giphy.gif)
+![DEBUG](http://wanna-joke.com/wp-content/uploads/2014/02/funny-gif-programming-is-hard.gif)
 
 This project had a few moments that Ant thought were going to end us. The worst however was merging conflicts and Debugging, alot of this work fell to Ant, which he loves, however the late nights are catching up to him. 
 
