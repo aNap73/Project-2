@@ -90,9 +90,9 @@ Anthony also deployed the site to Heroku, which... as always is a pleasure... <3
 
 ## Ant's Closing Thoughts
 
-This project really felt like the [Kobayashi_Maru](https://en.wikipedia.org/wiki/Kobayashi_Maru). It was a great learning experience I (Anthony)learned ALOT about managing a project, and a alot of new tech also. While I can't speak for Jason and Vinny totally, I know I've watched them both "get it" as we worked on the MVC views models and passport stuff together alot. I hope they also learned a ton.   
+This project really felt a bit like the [Kobayashi_Maru](https://en.wikipedia.org/wiki/Kobayashi_Maru). It was a great learning experience I (Anthony)learned ALOT about managing a project, and a alot of new tech also. While I can't speak for Jason and Vinny totally, I know I've watched them both "get it" as we worked on the MVC views models and passport stuff together alot. I hope they also learned a ton. We all had fun reprograming the simulator btw... ;) and that's how we have a site!   
 
-I hope that we continue to work together on this site in Project3 as there is alot I think we can do with it to upgrade it
+I hope that we continue to work together on this site in Project3 as there is alot I think we can do with it to upgrade it. Images, password reset, etc...
 
 ## However for now...
 
