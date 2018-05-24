@@ -47,16 +47,13 @@ The next part of the task was to integrate passport and bCrypt. I was pretty hap
 
 ![TITANIC](https://media.giphy.com/media/XOY5y7YXjTD7q/giphy.gif)
 
-The next task was to build a system that would allow a user to register on our site to comment.
+Anthony was the obvious choice for onBoarding, having intimate knowledge of the sites db models and passport installation and having written it before.
 
-Anthony was the obvious choice for this having intimate knowledge of the sites db models and passport installation.
+There are some pretty cool security features in this process. The email has a random id associated with the user. The user must have access to a valid email account and since that email is unique in all the world, we have a way to control our users a bit...
 
-Some cool features in this process is that it is as secure as Ant could make it.  The email has a random id associated with the user. 
+The email itself contains a link (correctly either prod, or local depeding on the environment variables) that returns to a route that requires the onBoard Random Id and the users email.
 
-The email itself contains a link (correctly either prod, or local depeding on dev or prod mode)
-The link has the users email and their random registration id.
-
-The link leads to a route that looks up the user and their random id. When the user accepts the site EULA their onBoarding id is made null, and autologin completes their registration process leaving them able to comment.
+If the route detects a valid user registration request it displays the site EULA, makes the users onBoarding null (to defeat using eula as login), and autologin completes their registration process leaving them able to comment.
 
 It was a difficult task and it went longer than expected, but having a secure onBoarding and login system for a site where users are generating content, is VERY IMPORTANT.
 
@@ -64,13 +61,13 @@ It was a difficult task and it went longer than expected, but having a secure on
 
 ![CSS](https://media.giphy.com/media/yYSSBtDgbbRzq/giphy.gif)
 
-Vinny was responsible for main site look and feel, and even though he landed a new job and began working in the middle of the project still burnt late hours with Ant debugging... (GO VINNY WOOT WOOT) he was able to get his part of our project done. After his work we had less of a cruddy blob and more of a less cruddy blob. 
+Vinny was responsible for main site look and feel, and even though he landed a new part time job and began working in the middle of the project, still burnt late hours with Ant debugging... He was able to get his part of our project done. After his work we had less of a cruddy blob and more of a less cruddy blob. Like I said... we were in a hurry. DEAD LINES. 
 
-The Article Edit page only available to admins allows us to create new Articles, we'd love it to edit existing Articles and hopefully, we collectively have time to do this.
+The Article Edit page only available to admins allows us to create new Articles, we'd love it to edit existing Articles and hopefully, we collectively have time to do this. This was another page Vin developed for our site.
 
-In addition Vin added our profanity filter which I believe is one of our star new techs along with bCrypt, sequelize, passport and node mailer.
-
-I'm sure we'd all like to really get to polishing the site look and feel but we got kind of stymied by images. Were working on it. 
+In addition Vin added our profanity filter which I believe is one of our star new techs along with the bCrypt, sequelize, passport and node mailer. While you can still shenanigan yourself around our filter it does help with basic cursing.
+ 
+I'm sure we'd all like to really get the site polished and we plan on still working on it. 
 
 ### Admin Page
 
@@ -80,23 +77,24 @@ While Vinny was hard at work styling our site, Jason was hard at work building o
 
 The admin page is secured by the user role administrator. Administrators however can use this impressive page to remove articles and comments and ban users... 
 
-BAN HAMMER!
+BAN HAMMER! INCOMING!
 
 ### Debugging, Merging and Heroku deploy
 
 ![DEBUG](http://wanna-joke.com/wp-content/uploads/2014/02/funny-gif-programming-is-hard.gif)
 
-This project had a few moments that Ant thought were going to end us. The worst however was merging conflicts and Debugging, alot of this work fell to Ant, which he loves, however the late nights are catching up to him. 
+This project had a few moments that Ant thought were going to end it. The worst however was merging conflicts and debugging. Did I mention late nights? 
 
 Anthony also deployed the site to Heroku, which... as always is a pleasure... <3 Heroku
-  
+<3 ma Team.
+
 ## Ant's Closing Thoughts
 
-This project really felt like the [Kobayashi_Maru](https://en.wikipedia.org/wiki/Kobayashi_Maru). It was a great learning experience. I (Anthony)learned ALOT about managing a project, and a alot of tech. While I can't speak for Jason and Vinny totally, I know I've watched them both "get it" as we worked on the MVC views models and passport stuff together alot. I hope they also learned a ton.  
+This project really felt like the [Kobayashi_Maru](https://en.wikipedia.org/wiki/Kobayashi_Maru). It was a great learning experience I (Anthony)learned ALOT about managing a project, and a alot of new tech also. While I can't speak for Jason and Vinny totally, I know I've watched them both "get it" as we worked on the MVC views models and passport stuff together alot. I hope they also learned a ton.   
 
-I hope that we continue to work together on this site in Project3 as there is alot I think we can do with it.
+I hope that we continue to work together on this site in Project3 as there is alot I think we can do with it to upgrade it
 
-However for now...
+## However for now...
 
 ![VACATION](https://media.giphy.com/media/5qoRdabXeT4GY/giphy.gif)
 
