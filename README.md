@@ -17,7 +17,7 @@ Fortunately, we rallied in the end and given some VERY latenights.. We got our s
 
 ## Project Plan
 
-![ProjectPlan](https://media.giphy.com/media/r6nDKpBpVKz2U/giphy.gif)
+![ProjectPlan](https://media.giphy.com/media/mciMfMijRXIfm/giphy.gif)
 
 Anthony was responsible for turning the informal group project discussions into a project plan.
 You can get a kick out of the MS Paint speed specs as I was forced to write our plan in one long night.
