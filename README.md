@@ -88,4 +88,5 @@ This project really felt like the [Kobayashi_Maru](https://en.wikipedia.org/wiki
 I hope that we continue to work together on this site in Project3 as there is alot I think we can do with it.
 
 However for now... 
+![VACATION](https://media.giphy.com/media/5qoRdabXeT4GY/giphy.gif)
 
