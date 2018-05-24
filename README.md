@@ -14,7 +14,7 @@ Throughout the project we had many set backs. Illness, new jobs, unplanned buisn
 
 Fortunately, we rallied in the end and given some VERY latenights.. We got our site up on heroku with what I would call minimal functionality. In my opinion this was a great success as in the real world Project teams can get even crazier as can life. 
 
-## First of all Alex Rosenkranz...
+## First of all [Alex Rosenkranz...](https://github.com/arosenkranz)
 
 Our fearless leader. Thanks Alex, for ALL the help, the merging advice, the support, not to mention all the learnings. Thank you so much! I know I speak for all of us when I say that you have really helped us grow as web developers. 
 
