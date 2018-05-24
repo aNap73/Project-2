@@ -14,7 +14,10 @@ passport.use(new LocalStrategy(
     // When a user tries to sign in this code runs
     db.users.findOne({
       where: {
-        email: email
+        email: email,
+        hasEmailConfirmed: 1,
+        hasAcceptedTerms: 1,
+        hasBan: 0
       }
     }).then(function(dbUser) {
       // If there's no user with the given email

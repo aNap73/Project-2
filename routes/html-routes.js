@@ -21,6 +21,7 @@ module.exports = function (app) {
           email: req.params.email
         }
       }).then(function(data){
+
          if(data.onBoardId.toString()===req.params.autoid.toString()){
           data.update(
             { hasEmailConfirmed: true,
@@ -32,16 +33,17 @@ module.exports = function (app) {
             
             req.login(data.email, function(err) {
 
-              let pageData = {
-                regInit: {
-                  value: true
-                }
-              };
-              pageData.happyMonkeys = 'Bill Logged in';
-              pageData.name = data.email;
-              pageData.userObj = data;
-              res.render("index", pageData);
-              return;  
+              // let pageData = {
+              //   regInit: {
+              //     value: true
+              //   }
+              // };
+              // pageData.happyMonkeys = 'Bill Logged in';
+              // pageData.name = data.email;
+              // pageData.userObj = data;
+              // res.render("index", pageData);
+              // return;
+              return res.redirect("/");  
             });
           });
          }
@@ -172,6 +174,8 @@ module.exports = function (app) {
   });
   /* Homepage route */
   app.get("*", function (req, res) {
+    if(req.user){ console.log('REQ.USER', req.user);}
+   
     let pageData = {};
     let commentData = {};
   
@@ -216,12 +220,12 @@ module.exports = function (app) {
 
           contentTitle: testTit,
 
-          contentText: testText,
+          contentText: testText
 
         }];
 
 
-        pageData[0].name = req.user.email;
+        //pageData[0].name = req.user.email;
         pageData[0].userObj = req.user;
       }
 
@@ -239,8 +243,7 @@ module.exports = function (app) {
         ['createdAt', 'DESC']
       ]
       }).then(function (outData) {
-        if (outData) {
-         
+        if (outData) {         
           for (var i = 0; i < outData.length; i++) {
           var commentText = outData[i].contentText;
           }
@@ -249,22 +252,37 @@ module.exports = function (app) {
           commentData = [{
             commentsNum: outData,
             comments: commentText
-          
+
                    
-          }]
-          //if(req.user){
-          //  commentData[0].email = outData[i].user.email
-          //}
+          }];
           
+          
+           
+          let myuser = req.user; 
+                
+                    
+          //console.log('req.user.email',req.user.email)));
+          if(myuser){
+            console.log('FOUND REQ.USER', myuser);
+            if(!myuser.email){
+              console.log('REQ.USER.EMAIL NOT FOUND', req.user);
+              myuser = {};
+              
+              myuser.email = req.user;
+              console.log('MYUSER', myuser);
+            }
+            
+          }
           res.render("index", {
             articles: pageData,
             commentsObj: commentData,
-            userObj: req.user
+            userObj: myuser
+            
           });
 
           // res.json(pageData);
-        }
-      })
+        }}
+      )
     })
 
 

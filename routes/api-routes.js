@@ -5,7 +5,11 @@ var path = require("path");
 var passport = require("../config/passport");
 var db = require("../models");
 var siteSendMail = require('../utilities/RegEmail.js');
-const emailurltop = 'https://stark-cliffs-26986.herokuapp.com';
+var emailurltop = 'http://127.0.0.1:3000'
+if(process.env.JAWSDB_URL){
+  emailurltop = 'https://stark-cliffs-26986.herokuapp.com';
+};
+console.log('EMAIL URL TOP', emailurltop)
 
 
 // this is for the filter!
@@ -84,7 +88,7 @@ module.exports = function (app) {
           //if (data.email.toString()!==req.body.email.toString()) {
           //IF NOT EXISTS
           //GENERATE NEW onBoardId
-          let newOnBoardId = Math.floor(Math.random() * 999999);
+          let newOnBoardId = Math.floor(Math.random() * 99999);
           //GENERATE NEW USER WITH EMAIL AND onBoardId
           db.users.create({
             email: req.body.email,
@@ -101,6 +105,7 @@ module.exports = function (app) {
             });
           });
         } else {
+          console.log('USER NOT FOUND')
           if (!data.hasEmailConfirmed) {
             res.json({
               route: "/register/founduser"
