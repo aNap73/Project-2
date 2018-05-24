@@ -10,7 +10,7 @@
 
 The basic idea behind Game Blog was to create a place that we could chat about intersting games and gaming news, write articles and interact with a gaming community.
 
-Throughout the project we had many set backs. Illness, new jobs, unplanned buisness trips, and the our newness with MVC, Handlebars and Passport contributed to a alot of features being cut. 
+Throughout the project we had many set backs. Illness, acclimating to new jobs, unplanned buisness trips, and the our general newness with some of this tech, contributed to a alot of features being cut. Mistakes and mistake fixing. In other words.... we learned a ton.
 
 Fortunately, we rallied in the end and given some VERY latenights.. We got our site up on heroku with what I would call minimal functionality. In my opinion, this was a great success as in the, real world Project don't get any easier in my experience. 
 
@@ -22,17 +22,19 @@ Our fearless leader. Thanks Alex, for ALL the help, the merging advice, the supp
 
 ![ProjectPlan](https://media.giphy.com/media/mciMfMijRXIfm/giphy.gif)
 
-I was responsible for turning the informal group project discussions into a project plan that we then discussed and altered, before I broke it down quickly, into tasks. I wish I would have done that a little differently, but I guess that's how we learn folks. Next time, I'll seperate concerns as to reduce critical path and merge times, it's helpful to have that experience. 
+I was responsible for turning the informal group project discussions into a project plan that we then discussed and altered, before I broke it down quickly, into tasks. I wish I would have done that a little differently, but I guess that's how we learn folks. Next time, I'll seperate concerns as to reduce critical path and merge times, it's helpful to have that experience for sure. 
 
-You may get a kick out of the MS Paint illustrations in the Project Plan, so I've included our Project plan. Sadly my favorite teddy pixel bear, never made it in. Cloudinary was our first feature pull, but the document gets the point across and the humor of it was alot of fun for us. 
+I've included our Project plan as it shows how the site progressed and also how bad I am at MS paint ;P 
 
-The text of the docuent is not very friendly or readable please forgive me for that, it was done in huge rush, and was mostly to remind a bunch of devs about a ton of conversations, slacks, thoughts, smoke signals and other coms and keep it central in one place.
+Sadly, my favorite teddy pixel bear, never made it in. Cloudinary was our first feature pull, but the document gets the point across and the humor of it was alot of fun for us. 
 
-While our project did not reach the full depth of the plans, and lots was forgotten or changed during the battle,  in the end we got our site up, and secured. Cause that's what devs do. I'm very proud of our team. 
+The text of the docuent is not very friendly or readable, please forgive me for that. It was done in a huge rush, and was mostly to remind a bunch of devs about a ton of conversations, slacks, thoughts, conversations, telepathy, smoke signals and other communications, while keeping us on the same page. That it did very well.
 
-We hope someday to finish these items and all the others in our heads, I'm sure we will and more.
+While our project did not reach the full depth of the plans, and lots was forgotten or changed during the battle,  in the end we got our site up, and secured. Cause that's what devs do. I'm very proud of our team. It's cool to see the site evolve.
 
-Given I've seen teams take months to put up a site what we did here in 2 weeks with lots of bad timing luck... impressive in my opinion.
+We hope someday, to finish these items and all the others in our heads, I'm sure we will and more.
+
+Given I've seen teams take months to put up a site, what we did here in 2 weeks with lots of bad timing and luck... impressive in my opinion.
 
 [For a hoot check out the original project plan](https://docs.google.com/document/d/1orlH0IazXP3EhP4c3Up1wwwvlq-nKstTUYJT41yhEfY/edit?usp=sharing)
 
@@ -67,9 +69,11 @@ I'd like to take a moment to say thank you for Abu's work on getting nodemailer 
 
 ![CSS](https://media.giphy.com/media/yYSSBtDgbbRzq/giphy.gif)
 
-Vinny was responsible for main site look and feel, and even though he landed a new part time job and began working in the middle of the project (YEA VIN! WOOT! GRATZ MAN!), he still burnt late hours debugging with Ant remotely... He was able to get his part of our project DONE and it looks pretty great. After his work we had less of a cruddy blob and more Gamer Blog under construction. Like I said... we were in a hurry. DEAD LINES. 2 weeks.
+Vinny was responsible for entire site look and feel and while I made horrible MS paint drawings and cut a ton of stuff away he did all this, while landing a new part time job (YEA VIN!). 
 
-Vinny also made our Article Edit page. However, it like admin are only which like the admin page are only available to admins. The Article Edit page allows us to create new Articles, in the future maybe we'll add an edit feature as well.  
+He also burnt late hours and early early pre class hours debugging with Ant adding critical fixes and helping out a ton... Both Vinny and Jason have great "eyes" as we call it when you can see bugs fast, it's awesome to have help with this, I'm not used to it, but man, it's great. Vinny was able to get his part of our project DONE and it looks pretty great, although I know he wishes he had more time. After his work we had less of a cruddy blob and more of a Gamer Blog. 
+
+Vinny also made our Article Edit page.  The Article Edit page allows admins to create new Articles, in the future maybe we'll add an edit feature as well. 
 
 In addition Vinny added our profanity filter, which was one of our new techs as required by the Project. We also implemented bCrypt, passport and nodemailer. While you can still shenanigan yourself around our filter it does help with basic cursing.
 
@@ -90,8 +94,9 @@ The admin page is secured by the user role administrator. Administrators however
 
 This project had a few moments that I thought were going to end it. The worst however was merging conflicts and debugging. Did I mention late nights? 
 
-I also deployed the site to Heroku, which... as always is a pleasure... <3 Heroku
-<3 ma Team. I realized after backing off a bit to let the guys have some fun... we might not make the deadline so... I went HAM and got us up and running... anywho... heroku is so easy... god I love it. 
+I also deployed the site to Heroku, which... as always is a pleasure... <3 Heroku.. so much better than IIS and the never ending hell of rights and priviledges on a Win Machine.
+
+I realized after backing off a bit to let the guys have some fun... we might not make the deadline so... I went HAM and got us up and running... anywho... heroku is so easy... god I love it. 
 
 ## My Closing Thoughts
 
@@ -100,6 +105,8 @@ This project really felt a bit like the [Kobayashi_Maru](https://en.wikipedia.or
 While, I can't speak for Jason and Vinny totally, I know I've watched them both "get it" as we worked on the MVC views models and passport stuff together alot. I know they also learned a ton and are becoming excellent full stack developers. In the end we all had fun reprograming the starfleet simulator for game news...  ;) and that's the story of how we have a site!   
 
 I hope that we continue to work together on this site in Project3 as there is alot I think we can do with it to upgrade it. Images, password reset, etc...
+
+Thanks team... and thank you for reading our projecty 2 readme!
 
 ## However for now...
 
