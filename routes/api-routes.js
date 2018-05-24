@@ -6,6 +6,13 @@ var passport = require("../config/passport");
 var db = require("../models");
 var siteSendMail = require('../utilities/RegEmail.js');
 const emailurltop = 'https://stark-cliffs-26986.herokuapp.com';
+
+
+// this is for the filter!
+var filter = require('leo-profanity');
+
+
+
 module.exports = function (app) {
   app.get("/logout", function (req, res) {
     req.logout();
@@ -15,8 +22,8 @@ module.exports = function (app) {
     console.log("INCOMING COMMENT POST");
 
     db.contents.create({
-      contentType: req.body.type,
-      contentText: req.body.text
+      contentType: filter.clean(req.body.type),
+      contentText: filter.clean(req.body.text)
     }).then(function (data) {
       if (!data) {
         console.log("this isnt working");
@@ -35,8 +42,8 @@ module.exports = function (app) {
     db.contents.create({
 
       contentType: req.body.type,
-      contentText: req.body.text,
-      contentTitle: req.body.title,
+      contentText:  filter.clean(req.body.text),
+      contentTitle: filter.clean(req.body.title),
 
     }).then(function (data) {
       if (!data) {
@@ -120,9 +127,9 @@ module.exports = function (app) {
       db.contents.create({
         contentId: req.body.contentId,
         contentType: "COMENT",
-        contentText: req.body.contentText,
-        contentImage: req.body.contentImage,
-        contentTitle: req.body.contentTitle
+        contentText: filter.clean(req.body.contentText),
+        contentImage: filter.clean(req.body.contentImage),
+        contentTitle: filter.clean(req.body.contentTitle)
       }).then(function (newPost) {
         res.json(newPost);
       });
@@ -156,32 +163,6 @@ module.exports = function (app) {
   app.get("/api/get/users", function (req, res) {
     db.users.findAll({}).then(function (dbUsers) {
       res.json(dbUsers);
-    });
-  });
-
-  /* Delete route for deleting content */
-  app.delete("/api/delete/content/:id" , function(req,res){
-    db.contents.destroy({
-      where: {
-        contentId: req.params.id
-      }
-    }).then(function (dbContent){
-      res.json(dbContent);
-    });
-  });
-
-  /* Put route to ban a user */
-  app.put("/api/put/users/:id" , function(req,res){
-    db.users.update(
-      { 
-        hasBan: true
-      }, {
-        where: {
-          userId: req.params.id
-        }
-      }
-    ).then(function(banUser){
-      res.json(banUser);
     });
   });
 

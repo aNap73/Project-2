@@ -15,7 +15,7 @@
 
 
     </div>
-    <div class="col-4">
+    <div id="commentSectionMain" class="col-4">
       {{#if userObj}}
       <form class="commentForm">
         <div class="form-group">
@@ -27,7 +27,7 @@
       {{/if}}
       <p>comment section</p>
       <div class="col-12" id="commentSection">
-        <ul>
+        <ul id="comments">
         {{#each commentsObj }}
         {{#each commentsNum}}
         <li>{{contentText}}-{{../email}}<p>{{createdAt}}</p></li>
