@@ -84,5 +84,46 @@ $(document).ready(function () {
     
   });
 
+  /* AJAX call to delete a post or article based on its id. */
+  $("#delete").on("click", function (e) { 
+
+    e.preventDefault();
+    var id = $("#content-id").val().trim();
+    console.log(id);
+    $.ajax({
+      type: "DELETE",
+      url: "/api/delete/content/" + id,
+      success: function (response) {
+        console.log("Remove post/article");
+        $(".response").append("Removed post/article with content id of: " + id + "<br/>");
+      },
+      error: function (err){
+        console.log("ERROR: " + err);
+      }
+    });
+    
+  });
+
+  /* AJAX call to ban a user based on their id. */
+  $("#ban").on("click" , function (e) { 
+
+    e.preventDefault();
+
+    var id = $("#user-id").val().trim();
+    console.log(id);
+    $.ajax({
+      type: "PUT",
+      url: "/api/put/users/" + id,
+      success: function (response) {
+        console.log("Banning user");
+        $(".response").append("Banning user with id of: " + id + "<br/>");
+      },
+      error: function (err){
+        console.log("ERROR: " + err);
+      }
+    });
+    
+  });
+
 
 });
