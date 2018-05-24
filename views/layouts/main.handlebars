@@ -22,21 +22,22 @@
     <div class="navbar-brand burger" > </div>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      
+    </div>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
           <a class="nav-link" href="/">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
-      </ul>
-    </div>
-    <div class="nav-item">
+    </ul>
       
       {{!-- this has to be the name of the item within the object --}}
       {{#if userObj}}        
         <a class="nav-link" href="/">Welcome! {{userObj.email}}</a>     
       {{else}}  
-        <a id="loginLink" href='/login'>Log In!</a>
+        <a id="loginLink"  href='/login'>Log In!</a>
+        <a id="regLink"  href='/register'>Register!</a>
       {{/if}}      
     </div>
     <div class="dropdown open">
@@ -47,7 +48,8 @@
       </button>
        {{/if}}
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="/logout">Log Out</a>           
+        <a class="dropdown-item" href="/logout">Log Out</a>          
+        
         {{#if userObj}}
         {{#if userObj.hasAdmin}}
         <div class="dropdown-divider"></div>
