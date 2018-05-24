@@ -1,6 +1,6 @@
 # Project-2 (Game Blog)
-### Developed by: Ihony Napolitano,  Vincent DeStefano, Jason Gomez, Abu Iqubal
-### ReadMe by: Ihony Napolitano
+### Developed by: Anthony Napolitano,  Vincent DeStefano, Jason Gomez, Abu Iqubal
+### ReadMe by: Anthony Napolitano
 
 [Live Site Here](https://stark-cliffs-26986.herokuapp.com/)
 
@@ -14,18 +14,21 @@ Throughout the project we had many set backs. Illness, new jobs, unplanned buisn
 
 Fortunately, we rallied in the end and given some VERY latenights.. We got our site up on heroku with what I would call minimal functionality. In my opinion this was a great success as in the real world Project teams can get even crazier as can life. 
 
+## First of all Alex Rosenkranz...
+
+Our fearless leader. Thanks Alex, for ALL the help, the merging advice, the support, not to mention all the learnings. Thank you so much! I know I speak for all of us when I say that you have really helped us grow as web developers. 
 
 ## Project Plan
 
 ![ProjectPlan](https://media.giphy.com/media/mciMfMijRXIfm/giphy.gif)
 
-I was responsible for turning the informal group project discussions into a project plan that we then discussed altered, before I gave out tasks.
+I was responsible for turning the informal group project discussions into a project plan that we then discussed and altered, before I broke it down quickly into tasks, which I wish I would have done differently but, that's how we learn folks. I think next time, I'll seperate concerns differently as the merge that followed whew... thank you source safe for teaching me to 'ride the beast'.  
 
-You can may get a kick out of the MS Paint speed specs as I was used to illustrate our plan in one long night, but they get the point across and the humor of it was alot of fun for us.
+You may get a kick out of the MS Paint speed specs I was deployed to illustrate our plans, sadly my favorite teddy pixel bear never made it in because we don't have cloudinary atm, but they get the point across and the humor of it was alot of fun for us.
 
-While our project did not reach the full depth of the plan, and lots was forgoten or changed during the battle,  in the end we got our site up, and secured.
+While our project did not reach the full depth of the plans, and lots was forgotten or changed during the battle,  in the end we got our site up, and secured. Cause that's what devs do. 
 
-We hope someday to finish these items, I'm sure we will and more.
+We hope someday to finish these items and all the others in our heads, I'm sure we will and more.
 
 [For a hoot check out the original project plan](https://docs.google.com/document/d/1orlH0IazXP3EhP4c3Up1wwwvlq-nKstTUYJT41yhEfY/edit?usp=sharing)
 
@@ -91,10 +94,6 @@ This project had a few moments that I thought were going to end it. The worst ho
 
 Ihony also deployed the site to Heroku, which... as always is a pleasure... <3 Heroku
 <3 ma Team.
-
-## Alex Rosenkranz...
-
-Our fearless leader. Thanks Alex, for ALL the help, the merging advice, the support, not to mention all the learnings. Thank you so much!
 
 ## My Closing Thoughts
 
