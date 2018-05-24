@@ -84,7 +84,7 @@ BAN HAMMER!
 
 ### Debugging, Merging and Heroku deploy
 
-![DEBUG](https://gph.is/1vOCl8h)
+![DEBUG](https://media.giphy.com/media/aeIuSiMkcTsRO/giphy.gif)
 
 This project had a few moments that Ant thought were going to end us. The worst however was merging conflicts and Debugging, alot of this work fell to Ant, which he loves, however the late nights are catching up to him. 
 
